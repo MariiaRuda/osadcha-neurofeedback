@@ -42,11 +42,10 @@ h1{ color:#fff; font-size:48px; line-height:1.0; letter-spacing:-.04em; font-wei
 .footer{ white-space:nowrap; }
 .footer-name{ display:inline; margin-right:16px; color:rgba(255,255,255,.84); font-size:14px; letter-spacing:.08em; }
 .footer-role{ display:inline; color:rgba(255,255,255,.62); font-size:14px; letter-spacing:.12em; }
-.group-heading{ font-size:13px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:#ffffff; margin-bottom:12px; text-shadow:0 2px 10px rgba(180,180,200,.30); }
-.group ul{ list-style:none; display:flex; flex-direction:column; gap:8px; }
-.group ul li{ color:#F5C24B; font-size:14px; line-height:1.4; position:relative; padding-left:16px; }
-.group ul li::before{ content:''; width:6px; height:6px; border-radius:50%; background:#fff; position:absolute; left:0; top:6px; }
-.slide-body .right-col{ flex:1; display:flex; padding-left:5%; }
+.right-col{ flex:1; display:flex; flex-direction:column; gap:36px; padding-left:5%; }
+.section-h2{ font-size:28px; font-weight:800; color:#fff; letter-spacing:-.02em; line-height:1.1; margin-bottom:16px; text-shadow:0 10px 42px rgba(0,0,0,.22); }
+.pill-row{ list-style:none; display:flex; flex-direction:row; flex-wrap:wrap; gap:8px; }
+.pill-row li{ color:#F5C24B; font-size:13px; font-weight:600; padding:5px 14px; border:1px solid rgba(255,255,255,.25); border-radius:999px; background:rgba(255,255,255,.08); white-space:nowrap; }
 </style>
 </head>
 
@@ -64,10 +63,10 @@ h1{ color:#fff; font-size:48px; line-height:1.0; letter-spacing:-.04em; font-wei
 а не одноразове втручання.</h1>
    <div class="lead">Стабільний результат формується через повторювані сесії, поступову регуляцію та підтримку адаптивних нейронних патернів.</div>
   </div>
-  <div class="right-col" style="flex-direction:row;gap:48px;">
-   <div class="group">
-    <div class="group-heading">Керівник проєкту / Оксана Осадча</div>
-    <ul>
+  <div class="right-col">
+   <div class="section">
+    <div class="section-h2">Оксана Осадча — Керівник проєкту</div>
+    <ul class="pill-row">
      <li>клінічний нейропсихолог</li>
      <li>психотерапевт</li>
      <li>спеціаліст з нейрокогнітивної реабілітації</li>
@@ -76,6 +75,16 @@ h1{ color:#fff; font-size:48px; line-height:1.0; letter-spacing:-.04em; font-wei
      <li>стажування у військовому госпіталі США</li>
     </ul>
    </div>
+   <div class="section">
+    <div class="section-h2">Команда</div>
+    <ul class="pill-row">
+     <li>психологи</li>
+     <li>реабілітаційні спеціалісти</li>
+     <li>мультидисциплінарна співпраця</li>
+     <li>клінічна база для роботи з військовими</li>
+    </ul>
+   </div>
+  </div>
    <div class="group">
     <div class="group-heading">Команда</div>
     <ul>

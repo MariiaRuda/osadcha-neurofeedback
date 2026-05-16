@@ -42,28 +42,17 @@ h1{ color:#fff; font-size:48px; line-height:1.0; letter-spacing:-.04em; font-wei
 .footer{ white-space:nowrap; }
 .footer-name{ display:inline; margin-right:16px; color:rgba(255,255,255,.84); font-size:14px; letter-spacing:.08em; }
 .footer-role{ display:inline; color:rgba(255,255,255,.62); font-size:14px; letter-spacing:.12em; }
-.timeline{ position:relative; display:flex; flex-direction:column; padding-left:32px; }
-.timeline::before{ content:''; position:absolute; left:7px; top:16px; bottom:0; width:2px; background:linear-gradient(to bottom, #6F2244, #F5C24B, rgba(255,255,255,.7)); z-index:0; }
-.tl-item{ position:relative; display:flex; flex-direction:column; margin-bottom:20px; }
-.tl-item:last-child{ margin-bottom:0; }
-.tl-node{ width:16px; height:16px; border-radius:50%; position:absolute; left:-32px; top:0; z-index:1; }
-.tl-phase{ font-size:10px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; margin-bottom:4px; }
-.tl-label{ font-size:13px; font-weight:700; color:rgba(255,255,255,.9); margin-bottom:6px; }
-.tl-content ul{ list-style:none; display:flex; flex-direction:column; gap:5px; }
-.tl-content ul li{ color:rgba(255,255,255,.75); font-size:12px; line-height:1.4; position:relative; padding-left:14px; }
-.tl-content ul li::before{ content:''; width:5px; height:5px; border-radius:50%; background:currentColor; position:absolute; left:0; top:5px; }
-.tl-item:nth-child(1) .tl-node{ background:#6F2244; }
-.tl-item:nth-child(2) .tl-node{ background:#F5C24B; }
-.tl-item:nth-child(3) .tl-node{ background:#ffffff; }
-.tl-item:nth-child(4) .tl-node{ background:rgba(255,255,255,.5); }
-.tl-item:nth-child(1) .tl-phase{ color:#6F2244; }
-.tl-item:nth-child(2) .tl-phase{ color:#F5C24B; }
-.tl-item:nth-child(3) .tl-phase{ color:#ffffff; }
-.tl-item:nth-child(4) .tl-phase{ color:rgba(255,255,255,.5); }
-.tl-item:nth-child(1) .tl-content ul li::before{ color:#6F2244; }
-.tl-item:nth-child(2) .tl-content ul li::before{ color:#F5C24B; }
-.tl-item:nth-child(3) .tl-content ul li::before{ color:#ffffff; }
-.tl-item:nth-child(4) .tl-content ul li::before{ color:rgba(255,255,255,.5); }
+.steps{ display:flex; flex-direction:column; gap:20px; }
+.step{ display:flex; flex-direction:row; align-items:flex-start; gap:16px; }
+.step-num{ flex-shrink:0; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; }
+.step:nth-child(1) .step-num{ background:#6F2244; }
+.step:nth-child(2) .step-num{ background:#F5C24B; color:#050816; }
+.step:nth-child(3) .step-num{ background:rgba(255,255,255,.20); border:1px solid rgba(255,255,255,.4); }
+.step:nth-child(4) .step-num{ background:rgba(245,194,75,.20); border:1px solid rgba(245,194,75,.4); color:#F5C24B; }
+.step-label{ font-size:13px; font-weight:700; color:rgba(255,255,255,.9); margin-bottom:5px; }
+.step-list{ list-style:none; display:flex; flex-direction:column; gap:4px; }
+.step-list li{ font-size:12px; line-height:1.4; color:rgba(255,255,255,.65); padding-left:10px; position:relative; }
+.step-list li::before{ content:'–'; position:absolute; left:0; color:rgba(255,255,255,.30); }
 .slide-body .right-col{ flex:1; display:flex; padding-left:5%; }
 </style>
 </head>
@@ -82,46 +71,51 @@ h1{ color:#fff; font-size:48px; line-height:1.0; letter-spacing:-.04em; font-wei
 та її здатність повертатися до життя.</h1>
    <div class="lead">Нейрофідбек — це інструмент підтримки, який допомагає людині поступово відновлювати стабільність, контакт із собою та відчуття безпеки.</div>
   </div>
-  <div class="right-col">
-   <div class="timeline">
-    <div class="tl-item">
-     <div class="tl-node"></div>
-     <div class="tl-phase">Етап 1</div>
-     <div class="tl-label">Підготовка</div>
-     <div class="tl-content"><ul>
-      <li>Отримання обладнання</li>
-      <li>Навчання персоналу</li>
-      <li>Підготовка протоколів</li>
-     </ul></div>
-    </div>
-    <div class="tl-item">
-     <div class="tl-node"></div>
-     <div class="tl-phase">Етап 2</div>
-     <div class="tl-label">Набір та обстеження</div>
-     <div class="tl-content"><ul>
-      <li>Набір учасників</li>
-      <li>Первинне обстеження</li>
-      <li>EEG-оцінка</li>
-     </ul></div>
-    </div>
-    <div class="tl-item">
-     <div class="tl-node"></div>
-     <div class="tl-phase">Етап 3</div>
-     <div class="tl-label">Терапія</div>
-     <div class="tl-content"><ul>
-      <li>Проведення нейрофідбек-терапії</li>
-      <li>Моніторинг динаміки</li>
-     </ul></div>
-    </div>
-    <div class="tl-item">
-     <div class="tl-node"></div>
-     <div class="tl-phase">Етап 4</div>
-     <div class="tl-label">Оцінка</div>
-     <div class="tl-content"><ul>
-      <li>Повторне обстеження</li>
-      <li>Аналіз даних</li>
-      <li>Підготовка результатів дослідження</li>
-     </ul></div>
+   <div class="right-col">
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-label">Підготовка</div>
+          <ul class="step-list">
+            <li>Отримання обладнання</li>
+            <li>Навчання персоналу</li>
+            <li>Підготовка протоколів</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-label">Набір та діагностика</div>
+          <ul class="step-list">
+            <li>Набір учасників</li>
+            <li>Первинне обстеження</li>
+            <li>EEG-оцінка</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-label">Терапія</div>
+          <ul class="step-list">
+            <li>Проведення нейрофідбек-терапії</li>
+            <li>Моніторинг динаміки</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-label">Аналіз результатів</div>
+          <ul class="step-list">
+            <li>Повторне обстеження</li>
+            <li>Аналіз даних</li>
+            <li>Підготовка результатів дослідження</li>
+          </ul>
+        </div>
+      </div>
     </div>
    </div>
   </div>

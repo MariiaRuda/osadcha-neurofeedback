@@ -44,9 +44,11 @@ h1{ color:#fff; font-size:48px; line-height:1.0; letter-spacing:-.04em; font-wei
 .footer-role{ display:inline; color:rgba(255,255,255,.62); font-size:14px; letter-spacing:.12em; }
 .group-heading{ font-size:13px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:#ffffff; margin-bottom:12px; text-shadow:0 2px 10px rgba(180,180,200,.30); }
 .group ul{ list-style:none; display:flex; flex-direction:column; gap:8px; }
-.group ul li{ color:#F5C24B; font-size:14px; line-height:1.4; position:relative; padding-left:16px; }
+.group ul li{ color:rgba(255,255,255,.85); font-size:14px; line-height:1.4; position:relative; padding-left:16px; }
 .group ul li::before{ content:''; width:6px; height:6px; border-radius:50%; background:#fff; position:absolute; left:0; top:6px; }
-.slide-body .right-col{ flex:1; display:flex; padding-left:5%; }
+.right-h2{ font-size:32px; font-weight:700; color:#fff; line-height:1.1; letter-spacing:-.03em; margin-bottom:32px; text-shadow:0 10px 42px rgba(0,0,0,.22); }
+.right-col{ flex:1; display:flex; flex-direction:column; padding-left:20%; }
+.groups-row{ display:flex; flex-direction:row; gap:48px; align-items:flex-start; }
 </style>
 </head>
 
@@ -64,7 +66,9 @@ h1{ color:#fff; font-size:48px; line-height:1.0; letter-spacing:-.04em; font-wei
 у процесах нейрокогнітивного відновлення.</h1>
    <div class="lead">Системний аналіз даних дозволяє краще розуміти динаміку станів, ефективність терапії та індивідуальні механізми регуляції.</div>
   </div>
-  <div class="right-col" style="flex-direction:row;gap:48px;">
+  <div class="right-col">
+   <div class="right-h2">Першочергові засади для забезпечення стабільного результату відновлення є:</div>
+   <div class="groups-row">
    <div class="group">
     <div class="group-heading">Етичні принципи</div>
     <ul>
@@ -74,6 +78,7 @@ h1{ color:#fff; font-size:48px; line-height:1.0; letter-spacing:-.04em; font-wei
      <li>право припинити участь у будь-який момент</li>
     </ul>
    </div>
+  </div>
    <div class="group">
     <div class="group-heading">Безпека</div>
     <ul>
