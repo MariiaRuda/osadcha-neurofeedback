@@ -11,12 +11,22 @@ body{
  background:#050816;
  overflow:hidden;
  font-family:Inter,system-ui,sans-serif;
+ color:white;
+}
+:root{
+  --yellow:#F5C24B;
+  --maroon:#6F2244;
+  --soft-white:rgba(255,255,255,.86);
 }
 .slide{
  width:100vw;
  height:100vh;
+ padding:52px 64px;
  position:relative;
  overflow:hidden;
+ display:flex;
+ flex-direction:column;
+ justify-content:space-between;
  background-image:
  linear-gradient(90deg, rgba(5,8,22,.52) 0%, rgba(5,8,22,.34) 28%, rgba(5,8,22,.08) 62%, rgba(5,8,22,.02) 100%),
  linear-gradient(0deg, rgba(5,8,22,.22) 0%, rgba(5,8,22,0) 44%),
@@ -26,75 +36,147 @@ body{
 }
 
 .kicker{
- position:absolute;
- top:64px;
- left:88px;
- color:#F5C24B;
+ color:var(--yellow);
  font-size:13px;
  font-weight:800;
  letter-spacing:.18em;
  text-transform:uppercase;
 }
-
 .count{
  position:absolute;
- top:64px;
- right:88px;
+ top:52px;
+ right:64px;
  color:rgba(255,255,255,.72);
  font-size:13px;
  letter-spacing:.12em;
 }
 
-.content{
- position:absolute;
- left:88px;
- top:270px;
- width:720px;
- z-index:5;
+/* ── Two-column layout ── */
+.slide-body{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  gap:6%;
+  flex:1;
+  min-height:0;
+}
+.content_left{
+  flex:0 0 44%;
+  max-width:44%;
+}
+.content__right{
+  flex:0 0 44%;
+  max-width:44%;
+  display:flex;
+  flex-direction:column;
+  align-self:stretch;
 }
 
+/* ── Left side ── */
 h1{
  color:#fff;
- font-size:66px;
- line-height:.95;
- letter-spacing:-.055em;
+ font-size:58px;
+ line-height:.96;
+ letter-spacing:-.05em;
  font-weight:760;
- text-shadow:0 10px 42px rgba(0,0,0,.25);
+ margin-bottom:24px;
 }
-
-.accent{
- color:#F5C24B;
-}
-
+.accent{ color:var(--yellow); }
 .lead{
- margin-top:28px;
  max-width:560px;
  color:rgba(255,255,255,.9);
- font-size:22px;
+ font-size:20px;
  line-height:1.42;
- text-shadow:0 8px 24px rgba(0,0,0,.22);
 }
 
+/* ── Right side — outer card ── */
+.right-card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  justify-content:center;
+}
+.right-bottom{
+  display:flex;
+  flex-direction:column;
+  gap:32px;
+}
+.section-label{
+  font-size:14.5px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:white;
+  font-weight:800;
+  margin-bottom:10px;
+  text-shadow:0 0 18px rgba(0,0,0,.35), 0 1px 6px rgba(0,0,0,.25);
+}
+
+/* ── Right side — bullet list ── */
+.bullet-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.bullet-list li{
+  position:relative;
+  padding-left:14px;
+  font-size:13.5px;
+  line-height:1.5;
+  color:rgba(255,255,255,.82);
+}
+.bullet-list li::before{
+  content:"•";
+  position:absolute;
+  left:0;
+  color:var(--yellow);
+}
+
+/* ── Right side — tag pills ── */
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.tag{
+  padding:5px 12px;
+  border:1.3px solid rgba(245,194,75,.8);
+  background:var(--yellow);
+  border-radius:999px;
+  font-size:14px;
+  color:white;
+  letter-spacing:.02em;
+  font-weight:500;
+  text-shadow:0 0 18px rgba(0,0,0,.35), 0 1px 6px rgba(0,0,0,.25);
+}
+
+/* ── Right side — conclusion panel ── */
+.conclusion{
+  font-size:18px;
+  line-height:1.55;
+  color:rgba(255,255,255,.82);
+  width:fit-content;
+  text-shadow:0 0 18px rgba(0,0,0,.35), 0 1px 6px rgba(0,0,0,.25);
+}
+
+/* ── Footer ── */
 .footer{
- position:absolute;
- left:88px;
- bottom:34px;
- white-space:nowrap;
+ color:rgba(255,255,255,.72);
+ font-size:13px;
+ letter-spacing:.12em;
+ text-transform:uppercase;
 }
-
 .footer-name{
  display:inline;
- margin-right:16px;
+ font-weight:500;
  color:rgba(255,255,255,.84);
- font-size:18px;
- letter-spacing:.08em;
+ margin-right:12px;
 }
-
 .footer-role{
  display:inline;
  color:rgba(255,255,255,.62);
- font-size:14px;
- letter-spacing:.12em;
 }
 </style>
 </head>
@@ -103,11 +185,50 @@ h1{
   <div class="kicker">Стабілізація та відновлення</div>
   <div class="count">06 / 18</div>
 
-  <div class="content">
-    <h1>Нейрофідбек допомагає <span class="accent">відновлювати</span> увагу, сон та емоційну регуляцію.</h1>
-    <div class="lead">
-      Метод створює умови для поступової нейропластичності та м’якшого повернення нервової системи до стабільного стану.
+  <div class="slide-body">
+
+    <div class="content_left">
+      <h1>Нейрофідбек допомагає <span class="accent">відновлювати</span> увагу, сон та емоційну регуляцію.</h1>
+      <div class="lead">
+        Метод створює умови для поступової нейропластичності та м'якшого повернення нервової системи до стабільного стану.
+      </div>
     </div>
+
+    <div class="content__right">
+      <div class="right-card">
+        <div class="right-bottom">
+
+          <div style="align-self:flex-end;">
+            <div class="section-label">Наукове обґрунтування</div>
+            <p style="font-size:15px;color:rgba(255,255,255,.92);margin-bottom:10px;line-height:1.5;text-shadow:0 0 18px rgba(0,0,0,.35),0 1px 6px rgba(0,0,0,.25);">Попередні дослідження показують, що нейрофідбек може допомагати:</p>
+            <div class="tags">
+              <span class="tag">стабілізувати нервову систему</span>
+              <span class="tag">покращувати увагу</span>
+              <span class="tag">зменшувати стрес</span>
+              <span class="tag">покращувати сон</span>
+              <span class="tag">відновлення після ЧМТ</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="section-label">Клінічні спостереження</div>
+            <p style="font-size:15px;color:rgba(255,255,255,.92);margin-bottom:10px;line-height:1.5;text-shadow:0 0 18px rgba(0,0,0,.35),0 1px 6px rgba(0,0,0,.25);">У роботі з військовими часто спостерігаються:</p>
+            <div class="tags">
+              <span class="tag">нервове виснаження</span>
+              <span class="tag">труднощі концентрації</span>
+              <span class="tag">емоційна нестабільність</span>
+              <span class="tag">порушення сну</span>
+              <span class="tag">перевантаження нервової системи</span>
+            </div>
+            <div class="conclusion" style="margin-top:16px;">
+              Це створює потребу у сучасних методах нейрореабілітації.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <div class="footer">

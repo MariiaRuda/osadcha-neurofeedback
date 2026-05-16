@@ -42,13 +42,14 @@ h1{ color:#fff; font-size:48px; line-height:1.0; letter-spacing:-.04em; font-wei
 .footer{ white-space:nowrap; }
 .footer-name{ display:inline; margin-right:16px; color:rgba(255,255,255,.84); font-size:14px; letter-spacing:.08em; }
 .footer-role{ display:inline; color:rgba(255,255,255,.62); font-size:14px; letter-spacing:.12em; }
-.group-heading{ font-size:13px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:#ffffff; margin-bottom:12px; text-shadow:0 2px 10px rgba(180,180,200,.30); }
+.accent{ color:#F5C24B; }
+.accent-m{ color:#6F2244; }
 .group ul{ list-style:none; display:flex; flex-direction:column; gap:8px; }
-.group ul li{ color:rgba(255,255,255,.85); font-size:14px; line-height:1.4; position:relative; padding-left:16px; }
-.group ul li::before{ content:''; width:6px; height:6px; border-radius:50%; background:#fff; position:absolute; left:0; top:6px; }
+.group ul li{ color:rgba(255,255,255,.85); font-size:14px; line-height:1.4; }
 .right-h2{ font-size:32px; font-weight:700; color:#fff; line-height:1.1; letter-spacing:-.03em; margin-bottom:32px; text-shadow:0 10px 42px rgba(0,0,0,.22); }
 .right-col{ flex:1; display:flex; flex-direction:column; padding-left:5%; }
-.groups-row{ display:flex; flex-direction:row; gap:180px; align-items:flex-start; }
+.groups-row{ display:flex; flex-direction:row; gap:24px; align-items:flex-start; }
+.card{ flex:1; background:rgba(255,255,255,.06); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,.10); border-radius:16px; padding:24px 20px; }
 </style>
 </head>
 
@@ -63,29 +64,27 @@ h1{ color:#fff; font-size:48px; line-height:1.0; letter-spacing:-.04em; font-wei
   <div class="left-col">
    <h1>Відновлення нервової системи —
 <span class="accent">це процес поступової перебудови</span>,
-а не миттєва реакція.</h1>
+а не миттєва реакція:</h1>
    <div class="lead">Нейрофідбек працює через повторення, стабілізацію патернів та формування нових механізмів адаптації.</div>
   </div>
   <div class="right-col">
-   <div class="right-h2">Це реалізовано за допомогою контролю якості підбору персоналу та системному моніторингу планових робіт</div>
+   <div class="right-h2">Це реалізовано за допомогою <span class="accent">контролю якості</span> підбору <span class="accent">персоналу</span> та <span class="accent-m">системному моніторингу</span> планових робіт</div>
    <div class="groups-row">
-   <div class="group">
-    <div class="group-heading">Навчання персоналу</div>
-    <ul>
-     <li>навчання роботі з обладнанням</li>
-     <li>супервізія</li>
-     <li>стандартизовані протоколи роботи</li>
-    </ul>
-   </div>
-  </div>
-   <div class="group">
-    <div class="group-heading">Контроль якості</div>
-    <ul>
-     <li>регулярна перевірка обладнання</li>
-     <li>контроль точності даних</li>
-     <li>ведення документації</li>
-     <li>моніторинг результатів терапії</li>
-    </ul>
+    <div class="card group">
+     <ul>
+      <li>навчання роботі з обладнанням</li>
+      <li>супервізія</li>
+      <li>стандартизовані протоколи роботи</li>
+     </ul>
+    </div>
+    <div class="card group">
+     <ul>
+      <li>регулярна перевірка обладнання</li>
+      <li>контроль точності даних</li>
+      <li>ведення документації</li>
+      <li>моніторинг результатів терапії</li>
+     </ul>
+    </div>
    </div>
   </div>
  </div>

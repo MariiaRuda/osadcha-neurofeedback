@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Слайд 07 — Дизайн дослідження (v5)</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 100vw; height: 100vh; overflow: hidden;
+    font-family: Inter, system-ui, sans-serif;
+    color: #fff;
+    background:
+      linear-gradient(135deg, rgba(111,34,68,.18) 0%, #050816 55%),
+      linear-gradient(0deg, rgba(5,8,22,.7) 0%, transparent 50%),
+      #050816;
+  }
+
+  .slide {
+    width: 100%; height: 100%;
+    padding: 52px 64px;
+    display: flex;
+    gap: 72px;
+  }
+
+  /* ── LEFT ── */
+  .col-left {
+    flex: 0 0 38%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: clamp(32px, 3.8vw, 52px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -1px;
+    color: #fff;
+  }
+
+  .divider-yellow {
+    width: 64px;
+    height: 1px;
+    background: #F5C24B;
+  }
+
+  .type-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,.35);
+    margin-bottom: 14px;
+  }
+
+  .dot-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dot-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: clamp(13px, 1.2vw, 15px);
+    color: rgba(255,255,255,.78);
+    line-height: 1.45;
+  }
+
+  .dot-list li::before {
+    content: "·";
+    font-size: 22px;
+    color: rgba(255,255,255,.25);
+    line-height: 0;
+    margin-top: -1px;
+    flex-shrink: 0;
+  }
+
+  /* ── RIGHT ── */
+  .col-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .phase-entry {
+    padding: 22px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .phase-entry + .phase-entry {
+    border-top: 1px solid rgba(255,255,255,.08);
+  }
+
+  .phase-entry h3 {
+    font-size: clamp(11px, 1.1vw, 13px);
+    font-weight: 700;
+    font-variant: small-caps;
+    letter-spacing: 2.5px;
+    color: #F5C24B;
+    text-transform: lowercase;
+  }
+
+  .phase-entry ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .phase-entry ul li {
+    font-size: clamp(12px, 1.15vw, 14px);
+    color: rgba(255,255,255,.72);
+    line-height: 1.5;
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .phase-entry ul li::before {
+    content: "·";
+    position: absolute;
+    left: 3px;
+    top: -1px;
+    font-size: 18px;
+    color: rgba(255,255,255,.2);
+    line-height: 1.4;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <!-- LEFT -->
+  <div class="col-left">
+    <h1>Дизайн дослідження</h1>
+    <div class="divider-yellow"></div>
+    <div>
+      <div class="type-label">Тип дослідження</div>
+      <ul class="dot-list">
+        <li>клінічне дослідження</li>
+        <li>довготривале спостереження</li>
+        <li>оцінка змін до та після терапії</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="col-right">
+    <div class="phase-entry">
+      <h3>До терапії</h3>
+      <ul>
+        <li>клінічне інтерв'ю</li>
+        <li>нейропсихологічне обстеження</li>
+        <li>EEG-обстеження</li>
+      </ul>
+    </div>
+
+    <div class="phase-entry">
+      <h3>Під час терапії</h3>
+      <ul>
+        <li>сеанси нейрофідбеку</li>
+        <li>когнітивна реабілітація</li>
+        <li>спостереження за змінами симптомів</li>
+      </ul>
+    </div>
+
+    <div class="phase-entry">
+      <h3>Після терапії</h3>
+      <ul>
+        <li>повторне обстеження</li>
+        <li>аналіз змін</li>
+        <li>оцінка результатів</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -12,14 +12,19 @@ body{
   overflow:hidden;
   color:white;
 }
+:root{
+  --yellow:#F8C34C;
+  --maroon:#6F2244;
+  --soft-white:rgba(255,255,255,.86);
+}
 .slide{
   width:100vw;
   height:100vh;
   position:relative;
-  padding:64px 88px 52px 88px;
+  padding:52px 64px;
   display:flex;
   flex-direction:column;
-  justify-content:flex-start;
+  justify-content:space-between;
   background-image:
     linear-gradient(90deg, rgba(5,8,22,.68) 0%, rgba(5,8,22,.42) 36%, rgba(5,8,22,.14) 66%, rgba(5,8,22,.04) 100%),
     linear-gradient(0deg, rgba(5,8,22,.22) 0%, rgba(5,8,22,0) 46%),
@@ -28,7 +33,7 @@ body{
   background-position:center;
 }
 .kicker{
-  color:#F8C34C;
+  color:var(--yellow);
   text-transform:uppercase;
   letter-spacing:.18em;
   font-size:13px;
@@ -36,54 +41,119 @@ body{
 }
 .count{
   position:absolute;
-  right:88px;
-  top:64px;
+  right:64px;
+  top:52px;
   color:rgba(255,255,255,.7);
   font-size:13px;
   letter-spacing:.12em;
 }
-.content{
-  max-width:680px;
+
+/* ── Two-column layout ── */
+.slide-body{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  gap:4%;
+  flex:1;
+  min-height:0;
 }
+.content_left{
+  flex:0 0 30%;
+  max-width:30%;
+}
+.content__right{
+  flex:0 0 62%;
+  max-width:62%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ── Left side ── */
 h1{
   color:white;
-  font-size:60px;
+  font-size:58px;
   line-height:.96;
-  letter-spacing:-.055em;
+  letter-spacing:-.05em;
   font-weight:760;
-  max-width:680px;
-  text-shadow:0 14px 48px rgba(0,0,0,.38);
+  margin-bottom:24px;
 }
-.accent{color:#F8C34C}
+.accent{color:var(--yellow)}
 .lead{
-  margin-top:34px;
   max-width:620px;
   color:rgba(255,255,255,.9);
   font-size:20px;
-  line-height:1.38;
-  text-shadow:0 8px 28px rgba(0,0,0,.32);
+  line-height:1.4;
 }
+
+/* ── Right side ── */
+.right-title{
+  font-size:35px;
+  font-weight:700;
+  letter-spacing:-.02em;
+  color:white;
+  margin-bottom:20px;
+  line-height:1.1;
+}
+.cards-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 32px;
+  width: 100%;
+}
+.card{
+  border-left:2px solid rgba(248,195,76,.5);
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(6px);
+  padding:12px 16px;
+  text-align: left;
+  flex: 1;
+}
+.card-label{
+  font-size:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--yellow);
+  font-weight:800;
+  margin-bottom:8px;
+}
+.card ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.card li{
+  position: relative;
+  padding-left: 14px;
+  font-size:13px;
+  line-height:1.55;
+  color:rgba(255,255,255,.8);
+  margin-bottom:4px;
+}
+.card li::before{
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--yellow);
+}
+
+/* ── Footer ── */
 .footer{
-  position:absolute;
-  bottom:34px;
-  left:88px;
-  right:88px;
-  white-space:nowrap;
   color:rgba(255,255,255,.72);
+  font-size:13px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
 }
 .footer-name{
   display:inline;
-  font-size:18px;
-  letter-spacing:.08em;
   font-weight:500;
   color:rgba(255,255,255,.84);
-  margin-right:16px;
+  margin-right:12px;
 }
 .footer-role{
   display:inline;
-  font-size:14px;
-  letter-spacing:.12em;
-  font-weight:400;
   color:rgba(255,255,255,.62);
 }
 </style>
@@ -93,11 +163,52 @@ h1{
   <div class="kicker">Що зараз не вистачає</div>
   <div class="count">05 / 18</div>
 
-  <div class="content" style="margin-top:260px; position:relative; z-index:5;">
-    <h1>Нейрофідбек поки <span class="accent">малодоступний</span>, а дослідницька база — недостатня.</h1>
-    <div class="lead">
-      Потрібна сучасна інфраструктура: EEG-обладнання, програмне забезпечення та локальні дослідження для військових.
+  <div class="slide-body">
+
+    <div class="content_left">
+      <h1>Нейрофідбек поки <span class="accent">малодоступний</span>, а дослідницька база — <span style="color:var(--maroon);">недостатня</span>.</h1>
+      <div class="lead">
+        Потрібна сучасна інфраструктура: EEG-обладнання, програмне забезпечення та локальні дослідження для військових.
+      </div>
     </div>
+
+    <div class="content__right">
+      <h2 class="right-title">Потенційний вплив дослідження</h2>
+
+      <div class="cards-wrap">
+
+      <div class="card">
+        <div class="card-label">Для пацієнтів</div>
+        <ul>
+          <li>покращення уваги та пам'яті;</li>
+          <li>зменшення тривожності та напруження;</li>
+          <li>стабілізація емоційного стану;</li>
+          <li>покращення сну;</li>
+          <li>полегшення адаптації після бойового досвіду.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
+        <div class="card-label">Для системи реабілітації</div>
+        <ul>
+          <li>впровадження сучасних методів нейрореабілітації;</li>
+          <li>розвиток доказової допомоги військовим;</li>
+          <li>створення нових протоколів реабілітації.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
+        <div class="card-label">Для науки та міжнародної співпраці</div>
+        <ul>
+          <li>створення клінічної бази даних;</li>
+          <li>можливість міжнародних досліджень;</li>
+          <li>розвиток нейрофідбек-досліджень в Україні.</li>
+        </ul>
+      </div>
+
+      </div>
+    </div>
+
   </div>
 
   <div class="footer">

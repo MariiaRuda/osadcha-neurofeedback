@@ -18,7 +18,10 @@ body{
 .slide{
  width:100vw;
  height:100vh;
- position:relative;
+ display:flex;
+ flex-direction:column;
+ justify-content:space-between;
+ padding:52px 64px;
  overflow:hidden;
 
  background-image:
@@ -31,9 +34,6 @@ body{
 }
 
 .kicker{
- position:absolute;
- top:64px;
- left:88px;
  color:#F5C24B;
  font-size:13px;
  font-weight:800;
@@ -42,63 +42,129 @@ body{
 }
 
 .count{
- position:absolute;
- top:64px;
- right:88px;
  color:rgba(255,255,255,.72);
  font-size:13px;
  letter-spacing:.12em;
 }
 
-.content{
- position:absolute;
- left:88px;
- top:50%;
- transform:translateY(-44%);
- width:720px;
- z-index:5;
+.top-bar{
+ display:flex;
+ justify-content:space-between;
+ align-items:flex-start;
+}
+
+.slide-body{
+ display:flex;
+ flex-direction:row;
+ align-items:center;
+ flex:1;
+ gap:48px;
+}
+
+.left-col{ flex:0 0 42%; }
+
+.right-col{
+ flex:1;
+ display:flex;
+ flex-direction:column;
+ gap:40px;
+ align-items:flex-start;
+ padding-left:5%;
 }
 
 h1{
  color:#fff;
- font-size:62px;
- line-height:.95;
- letter-spacing:-.055em;
- font-weight:760;
+ font-size:48px;
+ line-height:1.0;
+ letter-spacing:-.04em;
+ font-weight:700;
  text-shadow:0 10px 28px rgba(0,0,0,.10);
 }
 
-.accent{
- color:#F5C24B;
-}
+.accent{ color:#F5C24B; }
 
 .lead{
- margin-top:28px;
- max-width:560px;
- color:rgba(255,255,255,.88);
- font-size:22px;
- line-height:1.42;
+ margin-top:24px;
+ color:rgba(255,255,255,.80);
+ font-size:17px;
+ line-height:1.55;
  text-shadow:0 8px 18px rgba(0,0,0,.08);
 }
 
-.footer{
- position:absolute;
- left:88px;
- bottom:34px;
+/* pills */
+.pills{
+ list-style:none;
+ display:flex;
+ flex-direction:row;
+ flex-wrap:wrap;
+ align-items:flex-start;
+ gap:8px;
+}
+
+.pills li{
+ color:#F5C24B;
+ font-size:13px;
+ font-weight:600;
+ padding:5px 14px;
+ border:1px solid rgba(245,194,75,.40);
+ border-radius:999px;
+ background:rgba(245,194,75,.07);
+ position:static;
+ padding-left:14px;
+ text-shadow:none;
  white-space:nowrap;
 }
+
+.pills li::before{ display:none; }
+
+.ind-group{ width:100%; }
+.ind-group{}
+
+.ind-heading{
+ font-size:13px;
+ font-weight:800;
+ letter-spacing:.16em;
+ text-transform:uppercase;
+ color:#ffffff;
+ margin-bottom:14px;
+ text-shadow:0 2px 10px rgba(180,180,200,.30);
+}
+
+.ind-group ul:not(.pills){
+ list-style:none;
+ display:flex;
+ flex-direction:column;
+ gap:9px;
+}
+
+.ind-group ul.pills{
+ flex-direction:row;
+ flex-wrap:wrap;
+}
+
+.ind-group ul li{
+ color:#F5C24B;
+ font-size:14px;
+ line-height:1.4;
+ text-shadow:0 1px 8px rgba(180,180,200,.30), 0 0 20px rgba(160,160,180,.20);
+}
+
+.ind-group ul li::before{ display:none; }
+.pills li::before{ display:none; }
+
+.footer{ white-space:nowrap; }
 
 .footer-name{
  display:inline;
  margin-right:16px;
- color:rgba(255,255,255,.82);
- font-size:18px;
+ color:rgba(255,255,255,.84);
+ font-size:14px;
  letter-spacing:.08em;
 }
 
 .footer-role{
  display:inline;
- color:rgba(255,255,255,.60);
+ color:rgba(255,255,255,.62);
  font-size:14px;
  letter-spacing:.12em;
 }
@@ -109,27 +175,45 @@ h1{
 
 <div class="slide">
 
-<div class="kicker">Візія розвитку</div>
-<div class="count">10 / 18</div>
+ <div class="top-bar">
+  <div class="kicker">Візія розвитку</div>
+  <div class="count">10 / 18</div>
+ </div>
 
-<div class="content">
+ <div class="slide-body">
+  <div class="left-col">
+   <h1>Ми прагнемо створити <span class="accent">простір дослідження</span>, де клінічна практика поєднується з наукою та технологіями.</h1>
+   <div class="lead">Проєкт орієнтований на довготривалу співпрацю між нейропсихологами, дослідниками та фахівцями з реабілітації.</div>
+  </div>
 
-<h1>
-Ми прагнемо створити
-<span class="accent">простір дослідження</span>,
-де клінічна практика поєднується з наукою та технологіями.
-</h1>
+  <div class="right-col">
+   <div class="ind-group">
+    <div class="ind-heading">Необхідне обладнання</div>
+    <ul class="pills">
+     <li>апарат нейрофідбеку</li>
+     <li>EEG-обладнання</li>
+     <li>програмне забезпечення</li>
+     <li>датчики та витратні матеріали</li>
+    </ul>
+   </div>
 
-<div class="lead">
-Проєкт орієнтований на довготривалу співпрацю між нейропсихологами, дослідниками та фахівцями з реабілітації.
-</div>
+   <div class="ind-group">
+    <div class="ind-heading">Обладнання дозволить</div>
+    <ul class="pills">
+     <li>проводити EEG-обстеження</li>
+     <li>здійснювати нейрофідбек-терапію</li>
+     <li>оцінювати зміни роботи мозку</li>
+     <li>збирати клінічні дані</li>
+     <li>проводити наукове дослідження</li>
+    </ul>
+   </div>
+  </div>
+ </div>
 
-</div>
-
-<div class="footer">
-<span class="footer-name">Оксана Осадча</span>
-<span class="footer-role">Клінічний нейропсихолог · Україна</span>
-</div>
+ <div class="footer">
+  <span class="footer-name">Оксана Осадча</span>
+  <span class="footer-role">Клінічний нейропсихолог · Україна</span>
+ </div>
 
 </div>
 

@@ -42,9 +42,11 @@ h1{ color:#fff; font-size:48px; line-height:1.0; letter-spacing:-.04em; font-wei
 .footer-name{ display:inline; margin-right:16px; color:rgba(255,255,255,.84); font-size:14px; letter-spacing:.08em; }
 .footer-role{ display:inline; color:rgba(255,255,255,.62); font-size:14px; letter-spacing:.12em; }
 .right-col{ flex:1; padding-left:5%; }
+.card{ display:inline-block; background:rgba(255,255,255,.06); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,.10); border-radius:16px; padding:28px 24px; }
 .team-heading{ font-size:38px; font-weight:700; color:#fff; letter-spacing:-.04em; line-height:1.0; margin-bottom:24px; text-shadow:0 10px 42px rgba(0,0,0,.22); }
 .team-list{ list-style:none; display:flex; flex-direction:column; gap:10px; }
-.team-list li{ color:rgba(255,255,255,.88); font-size:18px; line-height:1.5; }
+.team-list li{ color:rgba(255,255,255,.88); font-size:18px; line-height:1.5; position:relative; padding-left:18px; }
+.team-list li::before{ content:''; width:7px; height:7px; border-radius:50%; background:#F5C24B; position:absolute; left:0; top:9px; }
 </style>
 </head>
 
@@ -63,14 +65,16 @@ h1{ color:#fff; font-size:48px; line-height:1.0; letter-spacing:-.04em; font-wei
    <div class="lead">Стійкі результати формуються через регулярність, доступність терапії та збереження зв'язку між фахівцем і пацієнтом.</div>
   </div>
   <div class="right-col">
-   <div class="team-heading">Наша команда має</div>
-   <ul class="team-list">
-    <li>досвід роботи у військовій реабілітації</li>
-    <li>досвід нейропсихологічної діагностики</li>
-    <li>досвід когнітивної реабілітації</li>
-    <li>практичну роботу з PTSD та ЧМТ</li>
-    <li>доступ до клінічної популяції пацієнтів</li>
-   </ul>
+   <div class="card">
+    <div class="team-heading">Наша команда має</div>
+    <ul class="team-list">
+     <li>досвід роботи у військовій реабілітації</li>
+     <li>досвід нейропсихологічної діагностики</li>
+     <li>досвід когнітивної реабілітації</li>
+     <li>практичну роботу з PTSD та ЧМТ</li>
+     <li>доступ до клінічної популяції пацієнтів</li>
+    </ul>
+   </div>
   </div>
   </div>
  </div>

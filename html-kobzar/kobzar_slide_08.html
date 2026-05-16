@@ -18,7 +18,10 @@ body{
 .slide{
  width:100vw;
  height:100vh;
- position:relative;
+ display:flex;
+ flex-direction:column;
+ justify-content:space-between;
+ padding:52px 64px;
  overflow:hidden;
 
  background-image:
@@ -31,9 +34,6 @@ body{
 }
 
 .kicker{
- position:absolute;
- top:64px;
- left:88px;
  color:#F5C24B;
  font-size:13px;
  font-weight:800;
@@ -42,57 +42,110 @@ body{
 }
 
 .count{
- position:absolute;
- top:64px;
- right:88px;
  color:rgba(255,255,255,.72);
  font-size:13px;
  letter-spacing:.12em;
 }
 
-.content{
- position:absolute;
- left:88px;
- top:50%;
- transform:translateY(-42%);
- width:700px;
- z-index:5;
+.top-bar{
+ display:flex;
+ justify-content:space-between;
+ align-items:flex-start;
+}
+
+.slide-body{
+ display:flex;
+ flex-direction:row;
+ align-items:center;
+ flex:1;
+ gap:48px;
+ margin-top:0;
+}
+
+.left-col{
+ flex:0 0 42%;
+}
+
+.right-col{
+ flex:1;
+ padding-left:5%;
+ display:flex;
+ flex-direction:row;
+ gap:72px;
+ align-items:flex-start;
 }
 
 h1{
  color:#fff;
- font-size:62px;
+ font-size:58px;
  line-height:.95;
  letter-spacing:-.055em;
  font-weight:760;
- text-shadow:0 10px 36px rgba(0,0,0,.16);
+ text-shadow:0 10px 42px rgba(0,0,0,.22);
 }
 
-.accent{
- color:#F5C24B;
-}
+.accent{ color:#F5C24B; }
 
 .lead{
- margin-top:28px;
- max-width:560px;
+ margin-top:20px;
  color:rgba(255,255,255,.9);
- font-size:22px;
+ font-size:20px;
  line-height:1.42;
- text-shadow:0 8px 20px rgba(0,0,0,.12);
+ text-shadow:0 8px 24px rgba(0,0,0,.18);
 }
 
-.footer{
- position:absolute;
- left:88px;
- bottom:34px;
- white-space:nowrap;
+/* right panel */
+.ind-group{}
+
+.ind-heading{
+ font-size:16px;
+ font-weight:800;
+ letter-spacing:.1em;
+ text-transform:uppercase;
+ margin-bottom:14px;
+ text-shadow:0 2px 12px rgba(180,180,200,.35), 0 0 24px rgba(160,160,180,.20);
 }
+
+.ind-group:nth-child(1) .ind-heading{ color:#ffffff; }
+.ind-group:nth-child(2) .ind-heading{ color:#ffffff; }
+
+.ind-group ul{
+ list-style:none;
+ display:flex;
+ flex-direction:column;
+ gap:8px;
+}
+
+.ind-group ul li{
+ color:#F5C24B;
+ font-size:15px;
+ line-height:1.4;
+ position:relative;
+ padding-left:18px;
+ text-shadow:0 1px 8px rgba(180,180,200,.30), 0 0 20px rgba(160,160,180,.20);
+}
+
+.ind-group ul li::before{
+ content:'';
+ width:7px;
+ height:7px;
+ border-radius:50%;
+ background:currentColor;
+ position:absolute;
+ left:0;
+ top:6px;
+}
+
+.ind-group:nth-child(1) ul li::before{ color:#ffffff; }
+.ind-group:nth-child(2) ul li::before{ color:#ffffff; }
+
+.footer{ white-space:nowrap; }
 
 .footer-name{
  display:inline;
  margin-right:16px;
  color:rgba(255,255,255,.84);
- font-size:18px;
+ font-size:14px;
  letter-spacing:.08em;
 }
 
@@ -109,25 +162,44 @@ h1{
 
 <div class="slide">
 
-<div class="kicker">Принцип нейрофідбеку</div>
-<div class="count">08 / 18</div>
+ <div class="top-bar">
+  <div class="kicker">Принцип нейрофідбеку</div>
+  <div class="count">08 / 18</div>
+ </div>
 
-<div class="content">
-<h1>
-Нейрофідбек допомагає мозку
-<span class="accent">адаптуватися</span>
-через повторюваний процес саморегуляції.
-</h1>
+ <div class="slide-body">
+  <div class="left-col">
+   <h1>Нейрофідбек допомагає мозку <span class="accent">адаптуватися</span> через повторюваний процес саморегуляції.</h1>
+   <div class="lead">Пацієнт отримує зворотний зв'язок про власну мозкову активність та поступово формує стабільніші патерни реагування.</div>
+  </div>
 
-<div class="lead">
-Пацієнт отримує зворотний зв’язок про власну мозкову активність та поступово формує стабільніші патерни реагування.
-</div>
-</div>
+  <div class="right-col">
+   <div class="ind-group">
+    <div class="ind-heading">Основні показники</div>
+    <ul>
+     <li>покращення концентрації уваги</li>
+     <li>покращення когнітивної витривалості</li>
+     <li>зменшення нервового напруження</li>
+     <li>покращення регуляції емоційного стану</li>
+    </ul>
+   </div>
 
-<div class="footer">
-<span class="footer-name">Оксана Осадча</span>
-<span class="footer-role">Клінічний нейропсихолог · Україна</span>
-</div>
+   <div class="ind-group">
+    <div class="ind-heading">Додаткові показники</div>
+    <ul>
+     <li>покращення сну</li>
+     <li>зменшення симптомів посттравматичного стресу</li>
+     <li>покращення повсякденного функціонування</li>
+     <li>зміни показників EEG</li>
+    </ul>
+   </div>
+  </div>
+ </div>
+
+ <div class="footer">
+  <span class="footer-name">Оксана Осадча</span>
+  <span class="footer-role">Клінічний нейропсихолог · Україна</span>
+ </div>
 
 </div>
 

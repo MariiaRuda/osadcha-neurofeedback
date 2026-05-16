@@ -19,15 +19,17 @@ body{
 }
 .accent_m{color:var(--maroon)}
 .accent_s{color:var(--soft-white)}
+.accent{color:var(--yellow)}
 .slide{
   width:100vw;
   height:100vh;
-  padding:64px;
+  padding:52px 64px;
   position:relative;
   overflow:hidden;
   display:flex;
   flex-direction:column;
   justify-content:space-between;
+  gap: 24px;
   background-image:
     linear-gradient(90deg, rgba(5,8,12,.58) 0%, rgba(5,8,12,.34) 42%, rgba(5,8,12,.12) 76%, rgba(5,8,12,.02) 100%),
     linear-gradient(0deg, rgba(5,8,12,.28) 0%, rgba(5,8,12,0) 48%),
@@ -50,122 +52,126 @@ body{
   font-size:13px;
   letter-spacing:.14em;
 }
-.content{max-width:980px}
+/* ── Two-column layout ── */
+.slide-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6%;
+  flex: 1;
+  min-height: 0;
+}
+.content_left {
+  flex: 0 0 46%;
+  max-width: 46%;
+}
+.content__right {
+  flex: 0 0 42%;
+  max-width: 42%;
+  padding-top: 8px;
+}
+
+/* ── Left side typography ── */
 h1{
-  max-width:920px;
   color:white;
-  font-size:70px;
+  font-size:58px;
   line-height:.96;
-  letter-spacing:-.055em;
+  letter-spacing:-.05em;
   font-weight:760;
   text-shadow:0 12px 42px rgba(0,0,0,.32);
-}
-h2{
-  max-width:720px;
-  color:white;
-  font-size:45px;
-  line-height:.96;
-  letter-spacing:-.055em;
-  font-weight:760;
-  text-shadow:0 12px 42px rgba(0,0,0,.32);
-  margin-bottom: 40px;
-}
-h3{
-  font-size: 14px;
-  letter-spacing: 2px;
-  color: #f5b942;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 .columns{
-  margin-top:34px;
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:14px 36px;
-  max-width:880px;
-  margin-bottom: 24px;
+  gap:12px 28px;
 }
-
 .point{
   color:rgba(255,255,255,.88);
-  font-size:22px;
-  line-height:1.35;
-  position:relative;
-  padding-left:24px;
-  text-shadow:0 6px 24px rgba(0,0,0,.28);
-}
-
-.point_sub{
-  color:rgba(255,255,255,.88);
   font-size:18px;
-  line-height:1.35;
+  line-height:1.4;
   position:relative;
-  padding-left:24px;
+  padding-left:20px;
   text-shadow:0 6px 24px rgba(0,0,0,.28);
 }
-
 .point::before{
   content:"";
-  width:7px;
-  height:7px;
+  width:6px;
+  height:6px;
   border-radius:50%;
   background:#F8C34C;
   position:absolute;
   left:0;
-  top:.56em;
+  top:.58em;
+}
+
+/* ── Right side typography (spacious & minimal) ── */
+h2{
+  color:white;
+  font-size:28px;
+  line-height:1.15;
+  letter-spacing:-.025em;
+  font-weight:700;
+  text-shadow:0 8px 28px rgba(0,0,0,.30);
+  margin-bottom: 28px;
+}
+h3{
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #f5b942;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+.point_sub{
+  color:rgba(255,255,255,.82);
+  font-size:15px;
+  line-height:1.55;
+  position:relative;
+  padding-left:18px;
 }
 .point_sub::before{
-   content: "•";
+  content: "•";
   position: absolute;
   left: 0;
   color: #f5b942;
 }
-.footer{
-  color:rgba(255,255,255,.72);
-  font-size:13px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
+.columns-right {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 28px;
 }
-.content__right {
-  max-width:980px;
-  position: absolute;
-  right: 5%;
-  top: 50%;
-  transform: translateY(-50%);
-  
-}
-
 .text-block {
   color: rgba(255,255,255,0.9);
+  margin-top: 4px;
 }
-
-.text-block h3 {
-  font-size: 14px;
-  letter-spacing: 2px;
-  color: #f5b942;
-  margin-bottom: 24px;
-}
-
 .text-block ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .text-block li {
   position: relative;
   padding-left: 18px;
-  margin-bottom: 14px;
-  
-  font-size: 18px;
+  margin-bottom: 12px;
+  font-size: 15px;
   line-height: 1.6;
-  opacity: 0.9;
+  color: rgba(255,255,255,.82);
 }
-
 .text-block li::before {
   content: "•";
   position: absolute;
   left: 0;
   color: #f5b942;
+}
+
+/* ── Footer ── */
+.footer{
+  color:rgba(255,255,255,.72);
+  font-size:13px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
 }
 </style>
 </head>
@@ -174,37 +180,39 @@ h3{
   <div class="kicker">Проблема</div>
   <div class="count">03 / 18</div>
 
-  <div class="content_left">
-    <h1>Найчастіше страждають увага, сон, памʼять та емоційна регуляція.</h1>
-    <div class="columns">
-      <div class="point">труднощі з концентрацією уваги</div>
-      <div class="point">погіршення памʼяті</div>
-      <div class="point">емоційне виснаження</div>
-      <div class="point">порушення сну</div>
-      <div class="point">постійне внутрішнє напруження</div>
-      <div class="point">підвищена тривожність</div>
-    </div>
-  </div>
-  <div class="content__right">
-    <h2>Чому <span class="accent_m">це дослідження важливе</span> зараз?</h2>
-    <h3>В УКРАЇНІ ЗНАЧНО ЗРОСЛА КІЛЬКІСТЬ ВІЙСЬКОВОСЛУЖБОВЦІВ ЯКІ ПОТРЕБУЮТЬ:</h3>
+  <div class="slide-body">
 
-    <div class="columns">
-      <div class="point_sub">нейрокогнітивної реабілітації;</div>
-      <div class="point_sub">відновлення після контузії та ЧПТ;</div>
-      <div class="point_sub">допомоги при порушеннях нервової системи;</div>
-      <div class="point_sub">сучасних методів вдновлення після бойового досвіду.</div>
+    <div class="content_left">
+      <h1>Найчастіше страждають <span class="accent">увага, сон, памʼять та емоційна регуляція.</span></h1>
+      <div class="columns">
+        <div class="point">труднощі з концентрацією уваги</div>
+        <div class="point">погіршення памʼяті</div>
+        <div class="point">емоційне виснаження</div>
+        <div class="point">порушення сну</div>
+        <div class="point">постійне внутрішнє напруження</div>
+        <div class="point">підвищена тривожність</div>
+      </div>
     </div>
-    
-    <ul>
-    <div class="text-block">
-      <h3>НА СЬОГОДНІ:</h3>
-      <ul>
-        <li>нейрофідбек-терапія малодоступна;</li>
-        <li>у більшості центрів немає EEG-обладнання;</li>
-        <li>існує нестача досліджень ефективності нейрофідбеку саме для військових.</li>
-      </ul>
+
+    <div class="content__right">
+      <h2>Чому <span class="accent_m">це дослідження важливе</span> зараз?</h2>
+      <h3>В УКРАЇНІ ЗНАЧНО ЗРОСЛА КІЛЬКІСТЬ ВІЙСЬКОВОСЛУЖБОВЦІВ ЯКІ ПОТРЕБУЮТЬ:</h3>
+      <div class="columns-right">
+        <div class="point_sub">нейрокогнітивної реабілітації;</div>
+        <div class="point_sub">відновлення після контузії та ЧМТ;</div>
+        <div class="point_sub">допомоги при порушеннях нервової системи;</div>
+        <div class="point_sub">сучасних методів відновлення після бойового досвіду.</div>
+      </div>
+      <div class="text-block">
+        <h3>НА СЬОГОДНІ:</h3>
+        <ul>
+          <li>нейрофідбек-терапія малодоступна;</li>
+          <li>у більшості центрів немає EEG-обладнання;</li>
+          <li>існує нестача досліджень ефективності нейрофідбеку саме для військових.</li>
+        </ul>
+      </div>
     </div>
+
   </div>
   
  

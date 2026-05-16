@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Слайд 07 — Дизайн дослідження (v2)</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 100vw; height: 100vh; overflow: hidden;
+    font-family: Inter, system-ui, sans-serif;
+    color: #fff;
+    background:
+      linear-gradient(135deg, rgba(111,34,68,.18) 0%, #050816 55%),
+      linear-gradient(0deg, rgba(5,8,22,.7) 0%, transparent 50%),
+      #050816;
+  }
+
+  .slide {
+    width: 100%; height: 100%;
+    padding: 52px 64px;
+    display: flex;
+    gap: 56px;
+  }
+
+  /* ── LEFT ── */
+  .col-left {
+    flex: 0 0 38%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  h1 {
+    font-size: clamp(26px, 3vw, 42px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -.5px;
+  }
+
+  h1 em {
+    font-style: normal;
+    text-decoration: underline;
+    text-decoration-color: #6F2244;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 3px;
+  }
+
+  .type-block {
+    border-left: 3px solid #6F2244;
+    padding-left: 20px;
+  }
+
+  .type-block h2 {
+    font-size: clamp(13px, 1.3vw, 16px);
+    font-weight: 600;
+    color: rgba(255,255,255,.6);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .dash-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+
+  .dash-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: clamp(13px, 1.25vw, 15px);
+    color: rgba(255,255,255,.82);
+    line-height: 1.5;
+  }
+
+  .dash-list li::before {
+    content: "–";
+    color: rgba(255,255,255,.4);
+    flex-shrink: 0;
+  }
+
+  /* ── RIGHT: TIMELINE ── */
+  .col-right {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    position: relative;
+  }
+
+  .timeline-line {
+    position: relative;
+    width: 2px;
+    background: linear-gradient(to bottom, #6F2244 0%, #F5C24B 50%, rgba(255,255,255,.2) 100%);
+    border-radius: 2px;
+    flex-shrink: 0;
+    margin-right: 32px;
+    align-self: stretch;
+  }
+
+  .timeline-entries {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 8px 0;
+  }
+
+  .timeline-entry {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  /* dot on the line — absolute positioned relative to col-right */
+  .timeline-entry .node {
+    position: absolute;
+    left: -39px; /* line is at margin-right:32px → node: -(32+7)= offset to center on line */
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #050816;
+    border: 2px solid #F5C24B;
+    flex-shrink: 0;
+  }
+
+  .timeline-entry:nth-child(1) .node { border-color: #6F2244; background: #6F2244; }
+  .timeline-entry:nth-child(2) .node { border-color: #F5C24B; background: #F5C24B; }
+  .timeline-entry:nth-child(3) .node { border-color: rgba(255,255,255,.5); background: rgba(255,255,255,.15); }
+
+  .entry-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .entry-content h3 {
+    font-size: clamp(13px, 1.3vw, 16px);
+    font-weight: 700;
+    letter-spacing: .5px;
+  }
+
+  .timeline-entry:nth-child(1) h3 { color: #F5C24B; }
+  .timeline-entry:nth-child(2) h3 { color: #F5C24B; }
+  .timeline-entry:nth-child(3) h3 { color: rgba(255,255,255,.7); }
+
+  .entry-content ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding-left: 12px;
+  }
+
+  .entry-content ul li {
+    font-size: clamp(12px, 1.1vw, 14px);
+    color: rgba(255,255,255,.75);
+    line-height: 1.45;
+    position: relative;
+    padding-left: 14px;
+  }
+
+  .entry-content ul li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 7px;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.3);
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <!-- LEFT -->
+  <div class="col-left">
+    <h1>Дизайн <em>дослідження</em></h1>
+
+    <div class="type-block">
+      <h2>Тип дослідження</h2>
+      <ul class="dash-list">
+        <li>клінічне дослідження</li>
+        <li>довготривале спостереження</li>
+        <li>оцінка змін до та після терапії</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- RIGHT: VERTICAL TIMELINE -->
+  <div class="col-right">
+    <div class="timeline-line"></div>
+
+    <div class="timeline-entries">
+      <div class="timeline-entry">
+        <div class="node"></div>
+        <div class="entry-content">
+          <h3>До терапії</h3>
+          <ul>
+            <li>клінічне інтерв'ю</li>
+            <li>нейропсихологічне обстеження</li>
+            <li>EEG-обстеження</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="node"></div>
+        <div class="entry-content">
+          <h3>Під час терапії</h3>
+          <ul>
+            <li>сеанси нейрофідбеку</li>
+            <li>когнітивна реабілітація</li>
+            <li>спостереження за змінами симптомів</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="node"></div>
+        <div class="entry-content">
+          <h3>Після терапії</h3>
+          <ul>
+            <li>повторне обстеження</li>
+            <li>аналіз змін</li>
+            <li>оцінка результатів</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

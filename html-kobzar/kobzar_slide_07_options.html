@@ -1,0 +1,208 @@
+це <!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Слайд 07 — варіанти макету</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #050816;
+    color: #fff;
+    font-family: Inter, system-ui, sans-serif;
+    min-height: 100vh;
+    padding: 48px 56px 72px;
+  }
+
+  .page-header {
+    margin-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    padding-bottom: 28px;
+  }
+
+  .page-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #F5C24B;
+    letter-spacing: -.3px;
+  }
+
+  .page-header p {
+    margin-top: 8px;
+    font-size: 14px;
+    color: rgba(255,255,255,.45);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 530px);
+    gap: 48px 40px;
+    justify-content: center;
+  }
+
+  .variant-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .frame-container {
+    width: 530px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,.1);
+    background: #050816;
+  }
+
+  .frame-container iframe {
+    width: 960px;
+    height: 540px;
+    transform: scale(0.552083333);  /* 530/960 */
+    transform-origin: top left;
+    border: none;
+    display: block;
+    pointer-events: none;
+  }
+
+  .variant-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .label-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: rgba(111,34,68,.5);
+    border: 1px solid rgba(111,34,68,.8);
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(255,255,255,.8);
+    flex-shrink: 0;
+  }
+
+  .label-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255,255,255,.75);
+  }
+
+  .label-desc {
+    font-size: 12px;
+    color: rgba(255,255,255,.35);
+    margin-top: 2px;
+  }
+
+  .open-link {
+    font-size: 11px;
+    color: rgba(245,194,75,.6);
+    text-decoration: none;
+    margin-top: 2px;
+    display: inline-block;
+    letter-spacing: .5px;
+  }
+  .open-link:hover { color: #F5C24B; text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Слайд 07 — варіанти макету</h1>
+  <p>Дизайн дослідження &nbsp;·&nbsp; 6 структурних варіантів</p>
+</div>
+
+<div class="grid">
+
+  <div class="variant-wrap">
+    <div class="frame-container">
+      <iframe src="kobzar_slide_07_v1.html" loading="lazy"></iframe>
+    </div>
+    <div class="variant-label">
+      <span class="label-num">1</span>
+      <div>
+        <div class="label-text">Класичні картки фаз</div>
+        <div class="label-desc">Дві колонки · картки з maroon top-border</div>
+        <a href="kobzar_slide_07_v1.html" target="_blank" class="open-link">↗ відкрити</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="variant-wrap">
+    <div class="frame-container">
+      <iframe src="kobzar_slide_07_v2.html" loading="lazy"></iframe>
+    </div>
+    <div class="variant-label">
+      <span class="label-num">2</span>
+      <div>
+        <div class="label-text">Вертикальний таймлайн</div>
+        <div class="label-desc">Дві колонки · вертикальна лінія з вузлами</div>
+        <a href="kobzar_slide_07_v2.html" target="_blank" class="open-link">↗ відкрити</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="variant-wrap">
+    <div class="frame-container">
+      <iframe src="kobzar_slide_07_v3.html" loading="lazy"></iframe>
+    </div>
+    <div class="variant-label">
+      <span class="label-num">3</span>
+      <div>
+        <div class="label-text">Три горизонтальні колонки</div>
+        <div class="label-desc">Верхній рядок + три фазові колонки знизу</div>
+        <a href="kobzar_slide_07_v3.html" target="_blank" class="open-link">↗ відкрити</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="variant-wrap">
+    <div class="frame-container">
+      <iframe src="kobzar_slide_07_v4.html" loading="lazy"></iframe>
+    </div>
+    <div class="variant-label">
+      <span class="label-num">4</span>
+      <div>
+        <div class="label-text">Нумеровані кроки</div>
+        <div class="label-desc">Великі напівпрозорі номери · pill-tag</div>
+        <a href="kobzar_slide_07_v4.html" target="_blank" class="open-link">↗ відкрити</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="variant-wrap">
+    <div class="frame-container">
+      <iframe src="kobzar_slide_07_v5.html" loading="lazy"></iframe>
+    </div>
+    <div class="variant-label">
+      <span class="label-num">5</span>
+      <div>
+        <div class="label-text">Мінімалізм — чисті лінії</div>
+        <div class="label-desc">Без фонів · small-caps · максимум простору</div>
+        <a href="kobzar_slide_07_v5.html" target="_blank" class="open-link">↗ відкрити</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="variant-wrap">
+    <div class="frame-container">
+      <iframe src="kobzar_slide_07_v6.html" loading="lazy"></iframe>
+    </div>
+    <div class="variant-label">
+      <span class="label-num">6</span>
+      <div>
+        <div class="label-text">Матриця (таблична)</div>
+        <div class="label-desc">Сіткова структура · комірки з бордерами</div>
+        <a href="kobzar_slide_07_v6.html" target="_blank" class="open-link">↗ відкрити</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

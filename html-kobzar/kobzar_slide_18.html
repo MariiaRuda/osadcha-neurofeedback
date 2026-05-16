@@ -44,9 +44,10 @@ h1{ color:#fff; font-size:48px; line-height:1.0; letter-spacing:-.04em; font-wei
 .footer-role{ display:inline; color:rgba(255,255,255,.62); font-size:14px; letter-spacing:.12em; }
 .group-heading{ font-size:13px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:#ffffff; margin-bottom:12px; text-shadow:0 2px 10px rgba(180,180,200,.30); }
 .group ul{ list-style:none; display:flex; flex-direction:column; gap:8px; }
-.group ul li{ color:#F5C24B; font-size:14px; line-height:1.4; position:relative; padding-left:16px; }
-.group ul li::before{ content:''; width:6px; height:6px; border-radius:50%; background:#fff; position:absolute; left:0; top:6px; }
-.slide-body .right-col{ flex:1; display:flex; padding-left:5%; }
+.group ul li{ color:rgba(255,255,255,.85); font-size:14px; line-height:1.4; position:relative; padding-left:16px; }
+.group ul li::before{ content:''; width:6px; height:6px; border-radius:50%; background:#F5C24B; position:absolute; left:0; top:6px; }
+.right-col{ flex:1; display:flex; flex-direction:row; gap:24px; align-items:flex-start; padding-left:5%; }
+.card{ flex:1; background:rgba(255,255,255,.06); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,.10); border-radius:16px; padding:24px 20px; }
 </style>
 </head>
 
@@ -63,8 +64,8 @@ h1{ color:#fff; font-size:48px; line-height:1.0; letter-spacing:-.04em; font-wei
 де <span class="accent">відновлення стає можливим</span>.</h1>
    <div class="lead">Ваша підтримка допоможе запустити дослідження, закупити обладнання та зробити нейрокогнітивну реабілітацію доступнішою для військових.</div>
   </div>
-  <div class="right-col" style="flex-direction:column;gap:32px;">
-   <div class="group">
+  <div class="right-col">
+   <div class="card group">
     <div class="group-heading">Ми шукаємо підтримку для</div>
     <ul>
      <li>отримання апарату нейрофідбеку та EEG-обладнання</li>
@@ -73,7 +74,7 @@ h1{ color:#fff; font-size:48px; line-height:1.0; letter-spacing:-.04em; font-wei
      <li>міжнародної співпраці та супервізії</li>
     </ul>
    </div>
-   <div class="group">
+   <div class="card group">
     <div class="group-heading">Отримання обладнання дозволить</div>
     <ul>
      <li>розширити допомогу військовим</li>
